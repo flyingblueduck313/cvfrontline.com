@@ -5,80 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV. Frontline Texindo Engineering</title>
     <style>
-        /* CSS Langsung di dalam file HTML */
+        /* Reset margin dan padding bawaan */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
         }
 
-        /* Bagian Atas: Gambar Background */
-        .hero-image {
-            height: 60vh; /* Mengambil 60% tinggi layar */
-            background-image: url('banner.webp);
+        /* Container utama untuk membungkus konten */
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Bagian Atas: Banner Image */
+        .hero-banner {
+            flex: 1.5; /* Memberikan porsi lebih besar untuk gambar */
+            background-image: url('banner.webp'); /* Memanggil file dari folder yang sama */
             background-size: cover;
             background-position: center;
-            width: 100%;
+            background-repeat: no-repeat;
         }
 
-        /* Bagian Bawah: Panel Informasi */
-        .info-section {
-            background-color: #9494e8; /* Warna biru-ungu sesuai screenshot */
-            color: #1a1a1a;
+        /* Bagian Bawah: Informasi Kontak */
+        .info-panel {
+            flex: 1; /* Memberikan porsi untuk teks */
+            background-color: #9494e8; /* Warna ungu-biru sesuai screenshot */
+            color: #000;
             text-align: center;
-            height: 40vh; /* Sisa 40% tinggi layar */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            box-sizing: border-box;
         }
 
-        .info-section h1 {
-            margin: 0 0 15px 0;
+        .info-panel h1 {
             font-size: 1.8rem;
+            margin-bottom: 15px;
             font-weight: bold;
-            letter-spacing: 0.5px;
         }
 
-        .info-section p {
-            margin: 4px 0;
-            font-size: 1.05rem;
+        .info-panel p {
+            margin: 5px 0;
+            font-size: 1.1rem;
             line-height: 1.4;
         }
 
-        .info-section a {
-            color: #0000ee;
+        .info-panel a {
+            color: #0000EE;
             text-decoration: none;
         }
 
-        .info-section a:hover {
+        .info-panel a:hover {
             text-decoration: underline;
         }
 
-        /* Penyesuaian untuk layar HP agar teks tidak terlalu kecil */
+        /* Responsif untuk layar kecil (HP) */
         @media (max-width: 600px) {
-            .info-section h1 { font-size: 1.2rem; }
-            .info-section p { font-size: 0.9rem; }
-            .hero-image { height: 50vh; }
-            .info-section { height: 50vh; }
+            .info-panel h1 { font-size: 1.3rem; }
+            .info-panel p { font-size: 0.9rem; }
+            .hero-banner { flex: 1; } /* Bagi layar 50:50 di HP */
         }
     </style>
 </head>
 <body>
 
-    <div class="hero-image"></div>
+    <div class="container">
+        <div class="hero-banner"></div>
 
-    <div class="info-section">
-        <h1>CV. FRONTLINE TEXINDO ENGINEERING</h1>
-        <p>Cempaka Mas Mega Wholesale Shophouse Block C-8</p>
-        <p>Jl. Letjen Suprapto, Jakarta 10640, Indonesia</p>
-        <p>Tel: +62-21-4259328, 42800425</p>
-        <p>Fax: +62-21-42881023</p>
-        <p>Email: <a href="mailto:sales@cvfrontline.com">sales@cvfrontline.com</a></p>
+        <div class="info-panel">
+            <h1>CV. FRONTLINE TEXINDO ENGINEERING</h1>
+            <p>Cempaka Mas Mega Wholesale Shophouse Block C-8</p>
+            <p>Jl. Letjen Suprapto, Jakarta 10640, Indonesia</p>
+            <p>Tel: +62-21-4259328, 42800425</p>
+            <p>Fax: +62-21-42881023</p>
+            <p>Email: <a href="mailto:sales@cvfrontline.com">sales@cvfrontline.com</a></p>
+        </div>
     </div>
 
 </body>
